@@ -1,0 +1,4 @@
+John,Rapper,New youk,40,Teacher
+Carrie,Thomas,Bhopal,34,Accountant
+Akshay,Kumar,Mumbai,53,Actor
+Ratan,Tata,Mumbai,80,BusinessMen
