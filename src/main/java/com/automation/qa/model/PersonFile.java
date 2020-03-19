@@ -54,6 +54,23 @@ public class PersonFile {
         }
     }
 
+
+    public void parsePersonWithoutColumnNameLombok() throws IOException {
+        if(!persons.isEmpty()){
+            LOG.info("File has already been processed, you can get all persons by calling right getter method");
+        }
+        try(BufferedReader reader = new BufferedReader(new InputStreamReader(Files.newInputStream(personFilePath)))) {
+            persons = new CsvToBeanBuilder<IPerson>(reader)
+                    .withType(PersonWithLombok.class)
+                    .withQuoteChar('"')
+                    .withIgnoreQuotations(false)
+                    .withSeparator(',')
+                    .withSkipLines(0)
+                    .build()
+                    .parse();
+        }
+    }
+
     public List<IPerson> getPersons(){
         return persons;
     }
